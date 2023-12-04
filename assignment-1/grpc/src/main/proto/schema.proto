@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+option java_package = "com.networking.grpc";
+
+
+service ProtoService {
+  rpc SendData (Request) returns (Response);
+}
+
+
+enum MilkType {
+    OnePercent = 0;
+    TwoPercent = 1;
+    FatFree = 2;
+    Whole = 3;
+ }
+
+enum MeatType {
+  Beef = 0;
+  Pork = 1;
+  Chicken = 2;
+ }
+
+enum BreadType {
+  White = 0;
+  WholeWheat = 1;
+ }
+
+message Vegetable {
+  float tomato = 1;
+  float cucumber = 2;
+  float lettuce = 3;
+}
+
+message Drink {
+  int32 coke = 1;
+  int32 beer = 2;
+ }
+
+message Bottle {
+  int32 sprite = 1;
+  int32 pepsi = 2;
+}
+
+
+message Milk {
+  MilkType type = 1;
+  float quantity = 2;
+}
+
+message Bread {
+  BreadType type = 1;
+  float quantity = 2;
+}
+
+message Meat {
+  MeatType type = 1;
+  float quantity = 2;
+}
+
+message Order {
+   Vegetable veggies = 1;
+   Drink drinks = 2;
+   Bottle bottles = 3;
+   Milk milk = 4;
+   Bread bread = 5;
+   Meat meat = 6;
+}
+
+enum DispenserStatus {
+  OPTIMAL = 0;
+  PARTIAL = 1;
+  BLOCKAGE = 2;
+}
+
+enum SensorStatus {
+  SENSOR_GOOD = 0;
+  SENSOR_BAD = 1;
+}
+
+enum LightbulbStatus {
+  LIGHTBULB_GOOD = 0;
+  LIGHTBULB_BAD = 1;
+}
+
+enum MicrowaveStatus {
+  MICROWAVE_GOOD = 0;
+  MICROWAVE_BAD = 1;
+}
+
+enum DishwasherStatus {
+  DISHWASHER_GOOD = 0;
+  DISHWASHER_BAD = 1;
+}
+
+message Health {
+  DispenserStatus dispenser = 1;
+  int32 icemaker = 2;
+  LightbulbStatus lightbulb = 3;
+  int32 fridge_temp = 4;
+  int32 freezer_temp = 5;
+  SensorStatus sensor_status = 6;
+  MicrowaveStatus microwave_status = 7;
+  DishwasherStatus dishwasher_status = 8;
+}
+
+enum ResponseCode {
+  OK = 0;
+  BAD_REQUEST = 1;
+}
+
+message Response {
+  ResponseCode code = 1;
+  string contents = 2;
+}
+message Request {
+  oneof request_type {
+    Order order = 1;
+    Health health = 2;
+  }
+}

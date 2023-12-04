@@ -1,0 +1,19 @@
+# milestone-1 [ZMQ]
+
+## For Running the servers ( in differrent mininet terminals)
+java -cp ./networking-1.0-SNAPSHOT.jar com.networking.handshake.ZMQOrderServer
+java -cp ./networking-1.0-SNAPSHOT.jar com.networking.handshake.ZMQHealthServer
+
+## For Running the Client ( in differrent mininet terminals)
+java -cp ./networking-1.0-SNAPSHOT.jar com.networking.handshake.ZMQClient
+
+# milestone-2 [GRPC]
+  
+  ## For Running the servers ( in differrent mininet terminals) 
+  java -cp ./grpc-1.0-SNAPSHOT.jar com.networking.server.OrderServer
+  java -cp ./grpc-1.0-SNAPSHOT.jar com.networking.server.HealthServer
+  
+  ## For Running the Client ( in differrent mininet terminals)
+  java -cp ./grpc-1.0-SNAPSHOT.jar com.networking.server.GrpcClient
+
+  

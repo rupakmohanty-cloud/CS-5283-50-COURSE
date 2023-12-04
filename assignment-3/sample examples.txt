@@ -1,0 +1,5 @@
+https://medium.com/rahasak/5g-core-network-setup-with-open5gs-and-ueransim-cd0e77025fd7
+
+
+https://github.com/s5uishida/open5gs_5gc_ueransim_sample_config
+

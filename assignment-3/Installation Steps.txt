@@ -1,0 +1,57 @@
+####################################
+rupak_ol_team5_vm1
+Floating IP : 129.114.25.236
+Private IP  : 192.168.5.238
+####################################
+
+
+
+
+####################################
+rupak_ol_team5_vm2
+Floating IP : 129.114.26.207
+Private IP  : 192.168.5.92
+####################################
+
+
+
+
+
+Comamnds to install git on vm-1 
+1. sudo apt update
+2. sudo apt install git
+
+###########################
+3Installing UERANSIM (VM1)
+###########################
+
+https://github.com/aligungr/UERANSIM/wiki/Installation
+
+
+1. git clone https://github.com/aligungr/UERANSIM
+
+
+Firstly it's better to update your apt repositories and upgrade the programs.
+sudo apt update
+
+
+sudo apt install make
+sudo apt install gcc
+sudo apt install g++
+sudo apt install libsctp-dev lksctp-tools
+sudo apt install iproute2
+sudo snap install cmake --classic
+
+
+How to access bashrc file ?
+
+ls -la ~/ | more
+vi ~/.bashrc
+
+export PATH=${PATH}:/home/cc/UERANSIM/build
+
+cd UERANSIM/config/
+cp open5gs-gnb.yaml custom_open5gs-gnb.yaml
+
+
+

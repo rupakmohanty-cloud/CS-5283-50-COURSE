@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.networking'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation group: 'com.google.flatbuffers', name: 'flatbuffers-java', version: '1.12.0'
+    implementation group: 'org.zeromq', name: 'jeromq', version: '0.5.1'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.networking.handshake.ZMQHealthServer'
+
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+task createExecutableJar(type: Jar) {
+    dependsOn jar
+    from jar.archiveFile
+    manifest {
+        attributes 'Main-Class': 'com.networking.handshake.ZMQHealthServer'
+        attributes 'Main-Class': 'com.networking.handshake.ZMQOrderServer'
+        attributes 'Main-Class': 'com.networking.handshake.ZMQClient'
+    }
+}
+application {
+    mainClassName = 'com.networking.handshake.ZMQHealthServer'
+}
+
+
+test {
+    useJUnitPlatform()
+}

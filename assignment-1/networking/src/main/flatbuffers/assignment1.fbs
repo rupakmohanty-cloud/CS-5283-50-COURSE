@@ -1,0 +1,110 @@
+namespace com.networking.flatbuffers.zmq;
+
+enum MilkType: byte {
+ 	FatFree = 0,
+ 	Whole = 1,
+  }
+
+ enum MeatType: byte {
+ 	Beef = 0,
+ 	Pork = 1,
+ 	Chicken = 2,
+ }
+
+ enum BreadType: byte {
+ 	White = 0,
+ 	MultiGrain = 1,
+ }
+
+
+ // Define schema for the message
+ table Vegetable {
+ 	tomato: float;
+ 	cucumber: float;
+ 	lettuce: float;
+ }
+
+ table Drink {
+ 	coke: int;
+ 	beer: int;
+ 	juice: int;
+ }
+
+ table Bottle {
+ 	sprite: int;
+ 	pepsi: int;
+ 	whitewine: int;
+}
+
+ table Milk {
+ 	type: MilkType;
+ 	quantity: float;
+ }
+
+ table Bread {
+ 	type: BreadType;
+ 	quantity: float;
+ }
+
+ table Meat {
+ 	type: MeatType;
+ 	quantity: float;
+ }
+
+ table Order {
+ 	veggies: [Vegetable];
+ 	drinks: [Drink];
+ 	bottles: [Bottle];
+ 	milk: [Milk];
+ 	bread: [Bread];
+ 	meat: [Meat];
+ }
+
+ enum DispenserStatus: byte {
+ 	OPTIMAL = 0,
+ 	PARTIAL = 1,
+ 	BLOCKAGE = 2
+ }
+
+ enum SensorStatus: byte {
+ 	GOOD = 0,
+ 	BAD = 1
+ }
+
+ enum LightbulbStatus: byte {
+ 	GOOD = 0,
+ 	BAD = 1
+ }
+
+ enum Microwavetatus: byte {
+ 	GOOD = 0,
+ 	BAD = 1
+ }
+
+ enum Dishwasherstatus: byte {
+ 	GOOD = 0,
+ 	BAD = 1
+ }
+
+ table Health {
+ 	dispenser: DispenserStatus;
+ 	icemaker: int;
+ 	lightbulb: LightbulbStatus;
+ 	fridge_temp: int;
+ 	freezer_temp: int;
+ 	sensor_status: SensorStatus;
+ }
+
+ enum ResponseCode: byte {
+ 	OK = 0,
+ 	BAD_REQUEST = 1
+ }
+
+ table Response {
+ 	code: ResponseCode;
+
+ }
+
+ root_type Order;
+ root_type Health;
+ root_type Response;

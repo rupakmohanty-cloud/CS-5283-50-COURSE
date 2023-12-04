@@ -1,0 +1,30 @@
+# This is our Demo Bastion used as the jump host on
+# Chameleon project CH-822922
+Host demo_bastion
+   User cc
+   Hostname 129.114.25.15
+   Port 22
+   IdentityFile ~/.ssh/F23_4383_5383.pem
+   StrictHostKeyChecking no
+
+# Here, add the private IP address of your VM and point the
+# Identity file to the key you have used to create your VM.
+# Note that we have used a common key to create the bastion but a
+# different key to create our personal VM.
+Host vm1
+   ProxyJump demo_bastion
+   Hostname 192.168.5.184
+   User cc
+   Port 22
+   IdentityFile ~/.ssh/rupak-networking.pem
+   StrictHostKeyChecking no
+   
+Host vm2
+   ProxyJump demo_bastion
+   Hostname 192.168.5.112
+   User cc
+   Port 22
+   IdentityFile ~/.ssh/rupak-networking.pem
+   StrictHostKeyChecking no
+
+
