@@ -1,6 +1,11 @@
 # CS 4383 Programming Assignment 2
 Recording for the assignment can be found at following locatios <br>
-https://drive.google.com/drive/folders/1DM1lN3cY3d-8CziOe8iXAWQXXntnXOKB?usp=sharing
+https://drive.google.com/drive/folders/1DM1lN3cY3d-8CziOe8iXAWQXXntnXOKB?usp=sharing <br>
+
+The execution steps are captured and attached as screenshot as an evidence of execution which can be found in the document <br>
+<br>PA2_execution_screenshots
+
+
 
 ### Prerequisite 
 The two VM's are create in CH-822922 with a bastion host the IP details of which are as below
@@ -30,9 +35,16 @@ sudo ip route add 10.10.2.0/24 via 192.168.100.2 dev vxlan0
 ```
  <br>
  ### Milestone 2
+  <br> Run the left topology on vm1 executing the command `sudo python3 lefttopology.py`
+  <br> Run the right topology on vm2 executing the command `sudo python3 righttopology.py`
+  <br> Run the grpc client on d2() in the lefttopology
+  <br> run the grpc servers on dr1(172.121.10.252) and du1(10.85.10.251) respectively
+  
+   The overall experiment ran for 3 cycles and the latenct comparisison is captured and commite as latency
+
  `sudo python3 lefttopology.py` on vm1 for left topo and `sudo python3 righttopology.py` on vm2 for right topo.
   Ran the grpc client on d2() in the lefttopology and grpc servers on dr1(172.121.10.252) and du1(10.85.10.251) respectively <br>
-  The experiment ran for 3 cycles and the teh result captured. <br>
+  The experiment ran for 3 cycles and the tehthe result captured as part of latency.png file
 
   The latency comparision chart is captured in latency.png file 
 
