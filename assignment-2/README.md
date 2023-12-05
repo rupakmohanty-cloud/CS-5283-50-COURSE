@@ -1,6 +1,6 @@
 # CS 4383 Programming Assignment 2
-Recording for the milestones 1 can be found at following locatios 
-https://drive.google.com/file/d/139w_k-8RwSe2Fe3FlKv_fMJmaBnWmnBi/view?usp=drive_link
+Recording for the milestones 1 can be found at following locatios <br>
+https://drive.google.com/drive/folders/1DM1lN3cY3d-8CziOe8iXAWQXXntnXOKB?usp=sharing
 
 ### Prerequisite 
 The two VM's are create in CH-822922 with a bastion host the IP details of which are as below
