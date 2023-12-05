@@ -1,5 +1,5 @@
 # CS 4383 Programming Assignment 2
-Recording for the milestones 1 can be found at following locatios <br>
+Recording for the assignment can be found at following locatios <br>
 https://drive.google.com/drive/folders/1DM1lN3cY3d-8CziOe8iXAWQXXntnXOKB?usp=sharing
 
 ### Prerequisite 
