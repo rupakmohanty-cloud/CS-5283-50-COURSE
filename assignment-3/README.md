@@ -1,7 +1,4 @@
 # CS 4383 Programming Assignment 3
-Author: Spencer Wu (wuy54, yu.heng.wu@vanderbilt.edu) <br>
-Last update: 12/01/2023 05:50 PM CST <br>
-[Link to the demo video](https://drive.google.com/file/d/1t2bC6QUh4MqDzVpGhJH4WD1Vt54DU87a/view?usp=sharing) <br> <br>
 
 vm1: 192.168.5.244 <br>
 vm2: 192.168.5.73
@@ -25,12 +22,3 @@ imsi `001010000000001`
 15. Start the iperf3 clien on vm1 through nr-binder with `./nr-binder <address for uesimtun0 interface> iperf3 -c 192.168.5.73 -p 5201`
 
 ### Milestone 2
-uesimtun0: 10.45.0.2 (the time I ran it) <br>
-d2: 10.10.6.252 <br>
-du1: 100.85.10.251 (grocery) <br>
-dr1: 172.121.10.252 (health) <br>
-1. Start the left.py from pa2 on vm1 with `sudo -E left.py` and the right.py from pa2 on vm2 with `sudo -E right.py`
-2. Open the xterm on d2 in the left topo and the xterm on dr1, du1 on the right topo.
-3. Go into zmq/grpc folder in the pa1 folder that copied into the remote vms and the execute the grpc_server.py/zmq_server_order.py on du1 (right/vm2), the grpc_server_health.py/zmq_server_health.py on dr1 (right/vm2), and the grpc_client.py/zmq_client.py on d2 (left/vm1).
-4. In either the zmq folder or the grpc folder in the pa1 repo folder, execute <br>
-`../../../UERANSIM/build/nr-binder <uesimtun0 address> python3 <zmq_client.py or grpc_client.py> -a1 10.85.100.251 -a2 172.121.10.252`
