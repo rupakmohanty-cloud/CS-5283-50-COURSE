@@ -33,18 +33,18 @@ sudo ip addr add 192.168.100.3/24 dev vxlan0
 sudo ip link set vxlan0 up
 sudo ip route add 10.10.2.0/24 via 192.168.100.2 dev vxlan0
 ```
- <br>
+ <
  ### Milestone 2
+
   <br> Run the left topology on vm1 executing the command `sudo python3 lefttopology.py`
   <br> Run the right topology on vm2 executing the command `sudo python3 righttopology.py`
   <br> Run the grpc client on d2() in the lefttopology
-  <br> run the grpc servers on dr1(172.121.10.252) and du1(10.85.10.251) respectively
+  <br> Run the grpc servers on dr1(172.121.10.252) and du1(10.85.10.251) respectively
+  <br> The overall experiment ran for 3 cycles and the latenct comparisison is captured and commite as latency
+  <br> The latency comparision chart is captured in latency.png file 
   
-   The overall experiment ran for 3 cycles and the latenct comparisison is captured and commite as latency
+   
+ 
 
- `sudo python3 lefttopology.py` on vm1 for left topo and `sudo python3 righttopology.py` on vm2 for right topo.
-  Ran the grpc client on d2() in the lefttopology and grpc servers on dr1(172.121.10.252) and du1(10.85.10.251) respectively <br>
-  The experiment ran for 3 cycles and the tehthe result captured as part of latency.png file
-
-  The latency comparision chart is captured in latency.png file 
+  
 
