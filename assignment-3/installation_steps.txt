@@ -1,0 +1,99 @@
+You can SSH into a Chameleon Cloud VM without a floating IP address by using a technique called “bastion host”. Here’s how it works:
+
+Create your instances: They will be connected by default to a VLAN called sharednet1. If you need more isolation, you can create your own VLAN1.
+Create a bastion host: Pick one of your nodes and associate a floating IP with your instance. This node will be accessible via SSH over the public internet2.
+SSH into the bastion host: Use the public IP of the bastion host to SSH into it2.
+SSH into other instances: Once you’re in the bastion host, you can SSH into any of your other nodes connected to its VLAN via their private IPs2.
+
+# Add the private key to your SSH identity
+ssh-add /path/to/keypair.pem
+
+# SSH into the bastion host
+ssh -A cc@floating_ip_a
+
+# SSH into another instance from the bastion host
+ssh cc@private_ip_address
+
+
+chmod 600 rupak-networking.pem
+ssh-add rupak-networking.pem
+ssh cc@129.114.108.102
+
+
+
+
+
+###########################
+Steps to login to the host 
+##########################
+
+ls -ltr
+
+ssh-add F23_4383_5383.pem
+ssh -A cc@129.114.25.15
+ssh cc@192.168.5.242
+
+
+
+####################################
+              VM1
+####################################
+
+Commands to login to vm1 via bastion host
+
+	chmod 600 rupak-networking.pem
+	ssh-add rupak-networking.pem
+	ssh -A cc@129.114.25.15
+	ssh cc@192.168.5.242
+
+Alternative Command [with config file set up ~/.ssh/config] 
+        ssh vm1 
+
+Comamnds to install git on vm-1 
+
+	sudo apt update
+	sudo apt install git
+
+Comamnds to install UERANSIM
+
+    	git clone https://github.com/aligungr/UERANSIM
+    	sudo apt upgrade
+    	sudo apt install make
+    	sudo apt install gcc
+    	sudo apt install g++
+    	sudo apt install libsctp-dev lksctp-tools
+    	sudo apt install iproute2
+    	sudo snap install cmake --classic
+	cd ~/UERANSIM
+    	
+   
+How to access and modify bashrc file ?
+
+    ls -la ~/ | more
+    vi ~/.bashrc
+    export PATH=${PATH}:/home/cc/UERANSIM/build
+
+Creating back up Files 
+
+   cd UERANSIM/config
+   cp open5gs-gnb.yaml custom_open5gs_gnb.yaml
+   cp open5gs-ue.yaml custom_open5gs_ue.yaml
+
+modifying custom-open5gs-gnb.yaml and modified custom-open5gs-ue.yaml in ~/UERANSIM/config/ 
+   
+
+####################################
+              VM2
+####################################
+
+
+
+
+For WebUI:
+=========
+1. First install node js 
+2. For webui follow this command
+curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -
+
+
+
