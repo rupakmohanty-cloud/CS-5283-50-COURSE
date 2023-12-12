@@ -5,6 +5,15 @@
 The project utilizes Mininet, a powerful tool for emulating SDN (Software Defined Network), to construct a simple SDN network topology and simulate traffic control within the Mininet-emulated environment. The primary objective is to develop two different SDN controller applications using [Ryu](https://github.com/faucetsdn/ryu) framework to implement traffic forwarding and redirection, respectively. The controller application that implements traffic forwarding directly forwards network traffic from Client to Server 1, while the other one redirects the traffic to Server 2 without the awareness of Client.
 
 
+### Recording of the demo 
+ 
+  Recording of the project demo is available at below link
+
+  https://drive.google.com/file/d/1wDGVsZSYRd1N7k6fNG50eo0kyULVUeZC/view?usp=sharing
+    
+ 
+
+
 
 ### Requirements_SDN
 - Linux environment (Ubuntu 22.04)
